@@ -1,0 +1,41 @@
+version: '3'
+services:
+  apache-php:
+    build:
+      context: .  # Current directory, where your Dockerfile is located
+    container_name: PXL
+    ports:
+      - "8443:443"
+    volumes:
+      - ./app:/var/www/html
+    networks:
+      my_custom_network:
+        ipv4_address: 172.18.0.20
+      
+
+  evilginx2:
+    build:
+      context: .  # Path to your project directory containing Dockerfile.evilginx2
+      dockerfile: Dockerfile.evilginx2  # Specify the Evilginx2 Dockerfile
+    container_name: PXL-EVIL
+    command: /bin/bash -l   # Avvia una shell bash in modalità login
+    stdin_open: true        # Mantieni l'input aperto
+    tty: true               # Mantieni il terminale attivo
+    volumes:
+      - ./phishlets:/evilginx2/phishlets 
+    ports:
+      - "8080:8080"
+      - "443:443"
+    networks:
+      my_custom_network:
+        ipv4_address: 172.18.0.10
+    extra_hosts:
+      - "login.targetsite.local:172.18.0.20"  # Specifica l'IP statico o il nome
+      - "targetsite.local:172.18.0.20"
+
+networks:
+  my_custom_network:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: "172.18.0.0/16"
