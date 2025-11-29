@@ -46,7 +46,7 @@ The 'normal' Apache site should work at: https://login.pxl.local!
 : lures create pxl
 : lures
 : lures get-url 0
-
+```
 
 ## Troubleshooting
 - Start Evilginx with Debug: **./evilginx2 -developer -debug**
