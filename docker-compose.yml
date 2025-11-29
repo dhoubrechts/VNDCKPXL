@@ -15,12 +15,12 @@ services:
 
   evilginx2:
     build:
-      context: .  # Path to your project directory containing Dockerfile.evilginx2
-      dockerfile: Dockerfile.evilginx2  # Specify the Evilginx2 Dockerfile
+      context: .  
+      dockerfile: Dockerfile.evilginx2
     container_name: PXL-EVIL
-    command: /bin/bash -l   # Avvia una shell bash in modalità login
-    stdin_open: true        # Mantieni l'input aperto
-    tty: true               # Mantieni il terminale attivo
+    command: /bin/bash -l  
+    stdin_open: true       
+    tty: true       
     volumes:
       - ./phishlets:/evilginx2/phishlets 
     ports:
@@ -30,8 +30,8 @@ services:
       my_custom_network:
         ipv4_address: 172.18.0.10
     extra_hosts:
-      - "login.targetsite.local:172.18.0.20"  # Specifica l'IP statico o il nome
-      - "targetsite.local:172.18.0.20"
+      - "ins.pxl.local:172.18.0.20" 
+      - "pxl.local:172.18.0.20"
 
 networks:
   my_custom_network:
