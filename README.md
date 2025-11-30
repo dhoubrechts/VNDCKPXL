@@ -29,7 +29,7 @@ You will now have two Docker Containers:
 	::1 pxl.local login.pxl.local
 ```
 
-The 'normal' Apache site should work at: https://login.pxl.local:8443
+The 'normal' Apache site should work at: https://pxl.local:8443
 Try to log-on (see login-config.php)
 
 ## Evilginx
