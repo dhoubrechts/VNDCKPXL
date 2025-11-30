@@ -23,12 +23,10 @@ You will now have two Docker Containers:
 - Add lines to hosts file (/etc/hosts)
 
 ```bash
-	::1 	pxl.local login.pxl.local
-	::1 	fake.local login.fake.local
+	127.0.0.1 fake.local login.fake.local
+	::1 fake.local login.fake.local
 	127.0.0.1 pxl.local login.pxl.local
-	172.0.0.1 fake.local login.fake.local
-	(172.18.0.20 	pxl.local login.pxl.local)
-	(172.18.0.10	  	fake.local login.fake.local)
+	::1 pxl.local login.pxl.local
 ```
 
 The 'normal' Apache site should work at: https://login.pxl.local:8443
