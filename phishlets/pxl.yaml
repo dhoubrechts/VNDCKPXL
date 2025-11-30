@@ -2,7 +2,7 @@ min_ver: '3.0.0'
 author: 'vndck'
 
 proxy_hosts:
-  - {phish_sub: '', orig_sub: '', domain: 'localhost', session: true, is_landing: true}
+  - {phish_sub: 'login', orig_sub: 'login', domain: 'localhost', session: true, is_landing: true}
   - {phish_sub: '', orig_sub: '', domain: 'localhost', session: true, is_landing: false}
   
 sub_filters:
@@ -30,5 +30,5 @@ auth_urls:
   - '/admin.php'
 
 login:
-  domain: 'localhost'
+  domain: 'login.localhost'
   path: '/index.php'
