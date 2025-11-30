@@ -30,8 +30,8 @@ services:
       my_custom_network:
         ipv4_address: 172.18.0.10
     extra_hosts:
-      - "ins.pxl.local:172.18.0.20" 
-      - "pxl.local:172.18.0.20"
+      - "login.localhost:172.18.0.20" 
+      - "localhost:172.18.0.20"
 
 networks:
   my_custom_network:
